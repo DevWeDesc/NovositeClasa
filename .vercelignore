@@ -1,0 +1,6 @@
+# Não publicar material de trabalho / referência
+_figma/
+.claude/
+CONTEUDO-FIGMA.txt
+LEIA-ME.md
+.DS_Store

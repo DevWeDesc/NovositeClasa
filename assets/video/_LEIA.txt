@@ -1,0 +1,8 @@
+Coloque aqui o arquivo do filme institucional com o nome exato:  institucional.mp4
+
+O arquivo original tem 206 MB. Recomendado comprimir antes de subir
+(alvo ~30-50 MB, 1080p, H.264). Sugestão de comando (com ffmpeg instalado):
+
+  ffmpeg -i "Filme Institucional - Clasa 2026 - Final _ V4 (1).mp4" \
+    -vf "scale=-2:1080" -c:v libx264 -crf 24 -preset slow \
+    -c:a aac -b:a 128k -movflags +faststart institucional.mp4

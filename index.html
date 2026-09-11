@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CLASA — Casa Lions de Adolescentes de Santo André</title>
+  <meta name="description" content="A CLASA é uma organização sem fins lucrativos que há mais de 50 anos prepara adolescentes e jovens de Santo André para o mundo do trabalho, por meio dos programas SCFV, Integrar e Aprendizagem." />
+  <link rel="icon" href="assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;1,400;1,700&family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css?v=11" />
+</head>
+<body data-page="home">
+
+  <div id="site-header"></div>
+
+  <main>
+
+    <!-- ==================== HERO CAROUSEL ==================== -->
+    <section class="hero" aria-label="Destaques">
+      <div class="hero__track" id="heroTrack">
+        <div class="hero__slide"><img src="assets/img/hero/hero-1.jpg" alt="Jovens da CLASA em atividade ao ar livre" fetchpriority="high" /></div>
+        <div class="hero__slide"><img src="assets/img/hero/hero-2.jpg" alt="Atividades da CLASA" loading="lazy" /></div>
+        <div class="hero__slide"><img src="assets/img/hero/hero-3.jpg" alt="Atividades da CLASA" loading="lazy" /></div>
+        <div class="hero__slide"><img src="assets/img/hero/hero-4.jpg" alt="Atividades da CLASA" loading="lazy" /></div>
+        <div class="hero__slide"><img src="assets/img/hero/hero-5.jpg" alt="Atividades da CLASA" loading="lazy" /></div>
+        <div class="hero__slide"><img src="assets/img/hero/hero-6.jpg" alt="Atividades da CLASA" loading="lazy" /></div>
+      </div>
+      <div class="hero__bars" id="heroBars" role="tablist" aria-label="Selecionar slide"></div>
+    </section>
+
+    <!-- ==================== QUEM SOMOS ==================== -->
+    <section class="section band-navy quem-somos reveal">
+      <div class="container">
+        <h2 class="section-title">Quem somos?</h2>
+        <p>
+          A CLASA — Casa Lions de Adolescentes de Santo André, fundada em 10/09/1975, é
+          administrada pelo Lions Clube Santo André Jardim e Lions Clube Santo André Centro.
+          É uma organização da sociedade civil (OSC) sem fins lucrativos que atua na política
+          de assistência social com programas, serviços e projetos no desenvolvimento dos
+          adolescentes, jovens, famílias e comunidade, por meio de práticas socioeducativas e
+          pelo fortalecimento de competências e habilidades essenciais, que contribuam para o
+          seu protagonismo no mundo do trabalho.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== CERTIFICAÇÕES ==================== -->
+    <section class="section certificacoes reveal">
+      <div class="container">
+        <h2 class="section-title section-title--yellow">Certificações</h2>
+        <div class="cert-grid">
+          <article class="cert-card">
+            <div class="cert-card__media"><img src="assets/img/cert-cebas.png" alt="CEBAS — Certificação de Entidade Beneficente de Assistência Social" /></div>
+            <a class="cert-card__foot" href="#" data-cert="cebas">Saiba mais →</a>
+          </article>
+          <article class="cert-card">
+            <div class="cert-card__media"><img src="assets/img/cert-cmdca.png" alt="CMDCA — Conselho Municipal dos Direitos da Criança e do Adolescente" /></div>
+            <a class="cert-card__foot" href="#" data-cert="cmdca">Saiba mais →</a>
+          </article>
+          <article class="cert-card">
+            <div class="cert-card__media"><img src="assets/img/cert-cmas.png" alt="CMAS — Conselho Municipal de Assistência Social de Santo André" /></div>
+            <a class="cert-card__foot" href="#" data-cert="cmas">Saiba mais →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== NÚMEROS ==================== -->
+    <section class="stats reveal" aria-label="Nossos números">
+      <div class="stats__inner">
+        <div class="stats__col">
+          <div class="stat__num">+15.000</div>
+          <p class="stat__label">Jovens inseridos no mercado de trabalho</p>
+        </div>
+        <div class="stats__col stats__col--navy">
+          <div class="stat__num">+500</div>
+          <p class="stat__label">Jovens capacitados anualmente</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PARCEIROS ==================== -->
+    <section class="section parceiros reveal">
+      <div class="container">
+        <h2 class="section-title">Nossos parceiros</h2>
+        <div class="logo-carousel__dots" id="parceirosDots"></div>
+        <div class="logo-carousel" id="parceirosCarousel">
+          <button class="logo-carousel__arrow logo-carousel__arrow--prev" aria-label="Anterior">&#8249;</button>
+          <div class="logo-carousel__viewport">
+            <div class="logo-carousel__track" id="parceirosTrack"></div>
+          </div>
+          <button class="logo-carousel__arrow logo-carousel__arrow--next" aria-label="Próximo">&#8250;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== AVALIAÇÕES ==================== -->
+    <section class="avaliacoes reveal" aria-label="Avaliações">
+      <div class="avaliacoes__head">
+        <h2>Algumas de nossas avaliações</h2>
+      </div>
+      <div class="reviews">
+        <article class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__meta">um ano atrás</p>
+          <p class="review-card__text">Lugar excelente, dão todo apoio ao jovem, minha filha conseguiu seu primeiro emprego aos 16 anos graças a essa maravilhosa instituição, a qual tem minha total gratidão e admiração. Muito obrigado a todos os envolvidos. Deus abençoe a todos e abençoe a CLASA.</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__meta">3 meses atrás</p>
+          <p class="review-card__text">Ótimo espaço para evento, recomendo.</p>
+          <img class="review-card__img" src="assets/img/espaco/g4.jpg" alt="Espaço de eventos da CLASA" loading="lazy" />
+        </article>
+        <article class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__meta">11 meses atrás</p>
+          <p class="review-card__text">Funcionários bem atenciosos, um lugar muito bem cuidado.</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__meta">3 meses atrás</p>
+          <p class="review-card__text">Muito bom ensino!!</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__meta">11 meses atrás</p>
+          <p class="review-card__text">Professores muito legais, lugar maravilhoso, me trouxe ótimas memórias. Vou sentir saudades ♡</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card__stars">★★★★★</div>
+          <p class="review-card__meta">2 meses atrás</p>
+          <p class="review-card__text">Local acolhedor, pessoal muito eficiente e dedicado.</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/partials.js?v=11"></script>
+  <script src="assets/js/main.js?v=11"></script>
+</body>
+</html>

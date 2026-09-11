@@ -1,0 +1,7 @@
+# Material de trabalho / referência — não versionar
+_figma/
+.claude/
+
+# Sistema
+.DS_Store
+Thumbs.db
