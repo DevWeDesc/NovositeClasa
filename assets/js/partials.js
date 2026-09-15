@@ -13,11 +13,16 @@
     { href: "alugue-nosso-espaco.html", label: "Alugue Nosso Espaço", key: "alugue" }
   ];
 
-  // Link do sistema de inscrição do Jovem Aprendiz (CLASA fornece a URL real)
-  var SEJA_APRENDIZ_URL = "#";
+  // Link do sistema de inscrição do Jovem Aprendiz
+  var SEJA_APRENDIZ_URL = "https://clasa.conectrh.com.br/p/NovoCandidatoSimplificadoPreAprendizagem/PBe6nlstGtpH5xNKjpWZ5KsZuETLGo7MhXxsduGezfgdQpomkZ";
 
-  // Redes sociais (CLASA fornece as URLs reais)
-  var SOCIAL = { instagram: "#", facebook: "#", linkedin: "#", youtube: "#" };
+  // Redes sociais
+  var SOCIAL = {
+    instagram: "https://www.instagram.com/clasa.oficial/",
+    facebook: "https://www.facebook.com/1363357683678070",
+    linkedin: "https://www.linkedin.com/company/clasalions/",
+    youtube: "https://www.youtube.com/@clasa.oficial"
+  };
 
   var page = document.body.getAttribute("data-page") || "";
 
@@ -38,7 +43,7 @@
         '<nav class="primary-nav" id="primaryNav" aria-label="Menu principal">' +
           "<ul>" + navItems + "</ul>" +
           '<div class="header-cta">' +
-            '<a class="btn" href="' + SEJA_APRENDIZ_URL + '" data-cta="seja-aprendiz">Seja Aprendiz</a>' +
+            '<a class="btn" href="' + SEJA_APRENDIZ_URL + '" data-cta="seja-aprendiz" target="_blank" rel="noopener">Seja Aprendiz</a>' +
             '<a class="btn" href="para-empresas.html">Para Empresas</a>' +
           "</div>" +
         "</nav>" +
@@ -74,10 +79,10 @@
           '<div class="footer-col">' +
             "<h3>Redes sociais</h3>" +
             '<div class="social-links">' +
-              '<a href="' + SOCIAL.instagram + '" data-social="instagram" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4a3.8 3.8 0 01-1.4-.9 3.8 3.8 0 01-.9-1.4c-.2-.4-.3-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 4.9a4.9 4.9 0 100 9.8 4.9 4.9 0 000-9.8zm0 8.1a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zm6.3-8.3a1.1 1.1 0 11-2.3 0 1.1 1.1 0 012.3 0z"/></svg></a>' +
-              '<a href="' + SOCIAL.facebook + '" data-social="facebook" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3V13h2.6v8h3.6z"/></svg></a>' +
-              '<a href="' + SOCIAL.linkedin + '" data-social="linkedin" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6.9 8.5V21H3V8.5h3.9zM5 2.8a2.3 2.3 0 110 4.6 2.3 2.3 0 010-4.6zM21 21h-3.9v-6.6c0-1.6-.6-2.7-2-2.7-1.1 0-1.7.7-2 1.4-.1.3-.1.6-.1 1V21H9.1s.1-11.3 0-12.5H13v1.8c.5-.8 1.4-1.9 3.5-1.9 2.5 0 4.5 1.7 4.5 5.2V21z"/></svg></a>' +
-              '<a href="' + SOCIAL.youtube + '" data-social="youtube" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 12s0-3.2-.4-4.7c-.2-.9-.9-1.5-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4c-.8.2-1.5.8-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7c.2.9.9 1.5 1.7 1.7 1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4c.8-.2 1.5-.8 1.7-1.7.4-1.5.4-4.7.4-4.7zM9.7 15.3V8.7l6 3.3-6 3.3z"/></svg></a>' +
+              '<a href="' + SOCIAL.instagram + '" data-social="instagram" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4a3.8 3.8 0 01-1.4-.9 3.8 3.8 0 01-.9-1.4c-.2-.4-.3-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 4.9a4.9 4.9 0 100 9.8 4.9 4.9 0 000-9.8zm0 8.1a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zm6.3-8.3a1.1 1.1 0 11-2.3 0 1.1 1.1 0 012.3 0z"/></svg></a>' +
+              '<a href="' + SOCIAL.facebook + '" data-social="facebook" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3V13h2.6v8h3.6z"/></svg></a>' +
+              '<a href="' + SOCIAL.linkedin + '" data-social="linkedin" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M6.9 8.5V21H3V8.5h3.9zM5 2.8a2.3 2.3 0 110 4.6 2.3 2.3 0 010-4.6zM21 21h-3.9v-6.6c0-1.6-.6-2.7-2-2.7-1.1 0-1.7.7-2 1.4-.1.3-.1.6-.1 1V21H9.1s.1-11.3 0-12.5H13v1.8c.5-.8 1.4-1.9 3.5-1.9 2.5 0 4.5 1.7 4.5 5.2V21z"/></svg></a>' +
+              '<a href="' + SOCIAL.youtube + '" data-social="youtube" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M23 12s0-3.2-.4-4.7c-.2-.9-.9-1.5-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4c-.8.2-1.5.8-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7c.2.9.9 1.5 1.7 1.7 1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4c.8-.2 1.5-.8 1.7-1.7.4-1.5.4-4.7.4-4.7zM9.7 15.3V8.7l6 3.3-6 3.3z"/></svg></a>' +
             "</div>" +
           "</div>" +
         "</div>" +

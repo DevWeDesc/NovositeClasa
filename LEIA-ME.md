@@ -20,9 +20,10 @@ site/
     ├── js/partials.js          Cabeçalho + rodapé (editar 1 vez, vale p/ todas as páginas)
     ├── js/main.js              Carrosséis, menu mobile, modais, acordeão
     ├── img/                    Imagens
-    ├── docs/                   PDFs institucionais
-    └── video/                  <-- colocar institucional.mp4 aqui (ver assets/video/_LEIA.txt)
+    └── docs/                   PDFs institucionais
 ```
+
+Vídeo institucional: embutido via YouTube (`institucional.html`, iframe `youtube-nocookie.com/embed/6mQtOjGX79o`) — não fica hospedado no site.
 
 ## Rodar localmente
 
@@ -46,14 +47,17 @@ Suba **o conteúdo da pasta `site/`** para a raiz da hospedagem.
 
 | Onde | O quê |
 |---|---|
-| `assets/js/partials.js` → `SEJA_APRENDIZ_URL` | Link do sistema/página de inscrição do Jovem Aprendiz |
-| `assets/js/partials.js` → `SOCIAL` | URLs reais de Instagram, Facebook, LinkedIn, YouTube |
-| `institucional.html` → 3 primeiros cards de "Documentos importantes" | PDFs dos Relatórios de Igualdade Salarial (1º/2º sem 2025, 1º sem 2026) |
-| `institucional.html` → "Plano de Ação" | Confirmar se é 2025 ou 2026 (subi o 2026) |
-| `index.html` → cards de Certificações ("Saiba mais") | Links das certificações CEBAS/CMDCA/CMAS (ou remover) |
-| `assets/video/institucional.mp4` | Vídeo comprimido (original tem 206 MB) |
+| `index.html` → cards de Certificações ("Saiba mais") | Certificados CEBAS/CMDCA/CMAS — CLASA vai enviar depois |
 | `assets/img/parceiros-inst/inst-1..7.png` | Confirmar/ajustar logos dos parceiros institucionais |
-| PDFs `relatorio-atividades-2025.pdf` (25 MB) e `plano-de-acao-2026.pdf` (30 MB) | Comprimir se possível |
+
+## RESOLVIDO (2026-09-15)
+
+- ✅ Vídeo institucional → embed do YouTube (`6mQtOjGX79o`, privacy-enhanced)
+- ✅ Link de inscrição do Jovem Aprendiz (`SEJA_APRENDIZ_URL` em `partials.js` + botão em `programas.html`)
+- ✅ Redes sociais (Instagram, Facebook, LinkedIn, YouTube) em `SOCIAL` (`partials.js`)
+- ✅ 3 PDFs dos Relatórios de Igualdade Salarial (1º/2º sem 2025, 1º sem 2026) adicionados em `assets/docs/`
+- ✅ Plano de Ação — confirmado, versão 2026 está correta
+- ✅ PDFs grandes comprimidos: Relatório de Atividades 25 MB → 6,2 MB · Plano de Ação 29 MB → 6,8 MB (imagens recomprimidas em JPEG, texto/tabelas continuam vetoriais e nítidos; backup dos originais em `/tmp/clasa-pdf-backup/` nesta máquina)
 
 ## Observações / diferenças em relação ao Figma
 
