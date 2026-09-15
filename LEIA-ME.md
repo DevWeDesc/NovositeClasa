@@ -2,6 +2,10 @@
 
 Site institucional estático (HTML/CSS/JS puro, sem build).
 
+**Repositório:** github.com/DevWeDesc/NovositeClasa — **público** (necessário para o
+deploy automático da Vercel funcionar no plano Hobby; ver histórico do projeto).
+**Deploy:** automático a cada `git push` na branch `main`.
+
 ## Estrutura
 
 ```
