@@ -136,6 +136,9 @@
       "utilrent---pluri-rental", "vitrocolor", "viva", "vov-mocinha", "wiermann-miranda"
     ];
 
+    // logos brancas/claras (somem no fundo branco) — ganham fundo azul-marinho
+    var LIGHT_LOGOS = ["coop", "diauto", "smartcomp", "nutrii-liffe"];
+
     function perGroup() {
       var w = window.innerWidth;
       if (w <= 560) return 4;
@@ -155,7 +158,7 @@
         grp.className = "logo-carousel__group";
         LOGOS.slice(g * size, g * size + size).forEach(function (name) {
           var cell = document.createElement("div");
-          cell.className = "logo-carousel__cell";
+          cell.className = "logo-carousel__cell" + (LIGHT_LOGOS.indexOf(name) > -1 ? " logo-carousel__cell--dark" : "");
           var img = document.createElement("img");
           img.src = "assets/img/parceiros/" + name + ".png";
           img.alt = "Empresa parceira da CLASA";

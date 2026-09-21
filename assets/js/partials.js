@@ -24,6 +24,22 @@
     youtube: "https://www.youtube.com/@clasa.oficial"
   };
 
+  // Ícones de traço (outline), herdam a cor do texto (currentColor)
+  var ICONS = {
+    phone: '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>',
+    whatsapp: '<path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/>',
+    mail: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
+    pin: '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>',
+    instagram: '<rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>',
+    facebook: '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
+    linkedin: '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>',
+    youtube: '<path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/>'
+  };
+
+  function icon(name) {
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICONS[name] + "</svg>";
+  }
+
   var page = document.body.getAttribute("data-page") || "";
 
   /* ---------- Header ---------- */
@@ -51,6 +67,15 @@
     "</header>";
 
   /* ---------- Footer ---------- */
+  var socialLinks = [
+    ["instagram", "Instagram"],
+    ["facebook", "Facebook"],
+    ["linkedin", "LinkedIn"],
+    ["youtube", "YouTube"]
+  ].map(function (s) {
+    return '<a href="' + SOCIAL[s[0]] + '" data-social="' + s[0] + '" aria-label="' + s[1] + '" target="_blank" rel="noopener">' + icon(s[0]) + "</a>";
+  }).join("");
+
   var footerHTML =
     '<footer class="site-footer">' +
       '<div class="container">' +
@@ -62,12 +87,12 @@
           '<div class="footer-col">' +
             "<h3>Contato</h3>" +
             '<div class="footer-contact footer-contact--row">' +
-              '<a href="tel:+551144287932"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V21c0 .6-.4 1-1 1C10.6 22 2 13.4 2 2.9c0-.6.5-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1L6.6 10.8z"/></svg>(11) 4428-7932</a>' +
-              '<a href="https://wa.me/5511973991689" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2.1.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.3c-.1.1-.3.3-.1.5.2.4.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l.9-1c.2-.2.4-.2.6-.1l2 .9c.3.1.5.2.5.4.1.2.1.8-.1 1.4z"/></svg>(11) 97399-1689</a>' +
-              '<a href="mailto:clasa@clasa.org.br"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm8 7L4 6.5V6l8 4.5L20 6v.5L12 11z"/></svg>clasa@clasa.org.br</a>' +
+              '<a href="tel:+551144287932">' + icon("phone") + "(11) 4428-7932</a>" +
+              '<a href="https://wa.me/5511973991689" target="_blank" rel="noopener">' + icon("whatsapp") + "(11) 97399-1689</a>" +
+              '<a href="mailto:clasa@clasa.org.br">' + icon("mail") + "clasa@clasa.org.br</a>" +
             "</div>" +
             "<h3>Localização</h3>" +
-            '<div class="footer-contact"><p><svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg>Avenida Dom Jorge Marcos de Oliveira, nº 50 — Vila Guiomar, Santo André — SP</p></div>' +
+            '<div class="footer-contact"><p>' + icon("pin") + "Avenida Dom Jorge Marcos de Oliveira n° 50, Vila Guiomar - Santo André - SP</p></div>" +
             '<nav class="footer-links" aria-label="Links do rodapé">' +
               '<a href="institucional.html">Institucional</a>' +
               '<a href="programas.html">Programas</a>' +
@@ -78,18 +103,13 @@
           "</div>" +
           '<div class="footer-col">' +
             "<h3>Redes sociais</h3>" +
-            '<div class="social-links">' +
-              '<a href="' + SOCIAL.instagram + '" data-social="instagram" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4a3.8 3.8 0 01-1.4-.9 3.8 3.8 0 01-.9-1.4c-.2-.4-.3-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 4.9a4.9 4.9 0 100 9.8 4.9 4.9 0 000-9.8zm0 8.1a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zm6.3-8.3a1.1 1.1 0 11-2.3 0 1.1 1.1 0 012.3 0z"/></svg></a>' +
-              '<a href="' + SOCIAL.facebook + '" data-social="facebook" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3V13h2.6v8h3.6z"/></svg></a>' +
-              '<a href="' + SOCIAL.linkedin + '" data-social="linkedin" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M6.9 8.5V21H3V8.5h3.9zM5 2.8a2.3 2.3 0 110 4.6 2.3 2.3 0 010-4.6zM21 21h-3.9v-6.6c0-1.6-.6-2.7-2-2.7-1.1 0-1.7.7-2 1.4-.1.3-.1.6-.1 1V21H9.1s.1-11.3 0-12.5H13v1.8c.5-.8 1.4-1.9 3.5-1.9 2.5 0 4.5 1.7 4.5 5.2V21z"/></svg></a>' +
-              '<a href="' + SOCIAL.youtube + '" data-social="youtube" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M23 12s0-3.2-.4-4.7c-.2-.9-.9-1.5-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4c-.8.2-1.5.8-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7c.2.9.9 1.5 1.7 1.7 1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4c.8-.2 1.5-.8 1.7-1.7.4-1.5.4-4.7.4-4.7zM9.7 15.3V8.7l6 3.3-6 3.3z"/></svg></a>' +
-            "</div>" +
+            '<div class="social-links">' + socialLinks + "</div>" +
           "</div>" +
         "</div>" +
         '<p class="site-footer__legal">© <span id="year"></span> CLASA — Casa Lions de Adolescentes de Santo André · CNPJ 48.135.800/0001-46</p>' +
       "</div>" +
     "</footer>" +
-    '<a class="help-fab" href="https://wa.me/5511973991689" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">?</a>';
+    '<a class="help-fab" href="faq.html" aria-label="Dúvidas frequentes">?</a>';
 
   var hSlot = document.getElementById("site-header");
   var fSlot = document.getElementById("site-footer");
