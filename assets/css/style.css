@@ -1268,18 +1268,17 @@ body.nav-open .nav-toggle span::after { transform: translateX(-50%) rotate(-45de
   justify-content: center; gap: 20px 21px; max-width: 1290px;
 }
 .doc-card {
-  position: relative; overflow: hidden; min-height: 87px; padding: 0 0 0 26px; gap: 14px;
-  border: 2px solid var(--navy); border-radius: 30px; background: #fff;
+  position: relative; min-height: 87px; padding: 0 20px 0 26px; gap: 14px;
+  border: 2px solid var(--navy); border-radius: 40px; background: transparent; color: var(--navy);
 }
-.doc-card__txt { flex: 1; font-size: 1rem; line-height: 1.5; padding: 8px 0; }
+.doc-card__txt { flex: 1; font-size: 1rem; line-height: 1.4; padding: 12px 0; }
 .doc-card__icon {
-  width: 92px; height: calc(100% + 4px); margin: -2px -2px -2px 0; border-radius: 30px;
-  align-self: stretch; background: var(--navy); color: var(--yellow);
+  flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%;
+  background: var(--navy); color: var(--yellow); display: grid; place-items: center;
 }
-.doc-card__icon svg { width: 52px; height: 52px; fill: none; }
-.doc-card:hover { background: #fff; color: var(--navy); }
+.doc-card__icon svg { width: 20px; height: 20px; color: var(--yellow); }
+.doc-card:hover { background: var(--navy); color: #fff; }
 .doc-card:hover .doc-card__icon { background: var(--yellow); color: var(--navy); }
-.doc-card:hover .doc-card__icon svg { fill: none; }
 .doc-card:last-child:nth-child(3n + 1) { grid-column: 2; }
 .band--lgpd { height: 280px; padding: 0; display: grid; align-content: center; }
 .band--lgpd .section-title { font-size: 2.25rem; margin-bottom: .6em; }
