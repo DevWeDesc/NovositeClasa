@@ -1256,7 +1256,7 @@ body.nav-open .nav-toggle span::after { transform: translateX(-50%) rotate(-45de
 .info-card--wide { border-radius: 20px; text-align: center; padding: 22px 46px 30px; }
 .info-card--wide h2 { color: #fff; font-size: 2rem; margin: 0 0 .5em; }
 .info-card--wide p { margin: 0; }
-.cols-2 { columns: 2; column-gap: 36px; }
+.info-card ul.cols-2 { display: block; columns: 2; column-gap: 36px; }
 .cols-2 li { break-inside: avoid; }
 
 /* ---- Institucional: Transparência ---- */
