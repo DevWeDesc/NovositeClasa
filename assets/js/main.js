@@ -230,17 +230,38 @@
     });
   });
 
-  /* ---------- Carrossel de fotos ---------- */
+  /* ---------- Carrossel de fotos (avança foto a foto, em loop) ---------- */
   document.querySelectorAll(".photo-carousel").forEach(function (car) {
     var track = car.querySelector(".photo-carousel__track");
+    var imgs = track.querySelectorAll("img");
+    var timer = null;
     var step = function () {
       var first = track.querySelector("img");
-      return first ? first.getBoundingClientRect().width + 16 : 300;
+      if (!first) return 300;
+      var gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
+      return first.getBoundingClientRect().width + gap;
     };
+    function advance(dir) {
+      var max = track.scrollWidth - track.clientWidth - 4;
+      if (dir > 0 && track.scrollLeft >= max) {
+        track.scrollTo({ left: 0, behavior: "smooth" });
+      } else if (dir < 0 && track.scrollLeft <= 4) {
+        track.scrollTo({ left: track.scrollWidth, behavior: "smooth" });
+      } else {
+        track.scrollBy({ left: dir * step(), behavior: "smooth" });
+      }
+    }
+    function start() { if (!reduceMotion && imgs.length > 1) { stop(); timer = setInterval(function () { advance(1); }, 3500); } }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
     var prev = car.querySelector(".photo-carousel__arrow--prev");
     var next = car.querySelector(".photo-carousel__arrow--next");
-    if (next) next.addEventListener("click", function () { track.scrollBy({ left: step(), behavior: "smooth" }); });
-    if (prev) prev.addEventListener("click", function () { track.scrollBy({ left: -step(), behavior: "smooth" }); });
+    if (next) next.addEventListener("click", function () { advance(1); start(); });
+    if (prev) prev.addEventListener("click", function () { advance(-1); start(); });
+    car.addEventListener("mouseenter", stop);
+    car.addEventListener("mouseleave", start);
+    car.addEventListener("touchstart", stop, { passive: true });
+    car.addEventListener("touchend", start, { passive: true });
+    start();
   });
 
   /* ---------- FAQ em cards ---------- */
@@ -249,7 +270,6 @@
       var card = btn.closest(".faq-card");
       var open = card.classList.toggle("is-open");
       btn.setAttribute("aria-expanded", open ? "true" : "false");
-      btn.textContent = open ? "Fechar" : "Ver resposta";
     });
   });
 

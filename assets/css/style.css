@@ -1654,3 +1654,68 @@ body[data-page="para-empresas"] .band-alt { background: #fff; padding: 46px 0 52
   .partners__row { flex-wrap: wrap; justify-content: center; gap: 22px 18px; }
   .partners__row img { width: min(calc(var(--w) * 1px), 42vw); }
 }
+
+/* =========================================================
+   REVISÃO CLASA 3 (25/09)
+   ========================================================= */
+
+/* ---- Home: indicador do carrossel — segmento ativo bem destacado ---- */
+.hero__bars { align-items: flex-end; }
+.hero__bar { height: 6px; background: rgba(255, 255, 255, 0.55); transition: height .25s, background .25s; }
+.hero__bar.is-active { height: 10px; background: rgba(255, 184, 18, 0.45); box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.95), 0 2px 6px rgba(1, 20, 44, 0.55); }
+
+/* ---- Documentos: linhas centralizadas (última linha também) ---- */
+.doc-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px 21px; max-width: 1290px; margin-inline: auto; }
+.doc-card, .doc-card:last-child:nth-child(3n + 1), .doc-card:last-child:nth-child(odd) { flex: 0 1 415px; grid-column: auto; justify-self: auto; width: auto; }
+
+/* ---- Parceiros institucionais menores ---- */
+.partners__row { gap: 28px 48px; }
+
+/* ---- Diretoria: cargo colado no nome ---- */
+.person-card { gap: 6px; }
+.person-card__role { min-height: 0; }
+.person-card:not(.person-card--lead) .person-card__role { min-height: 38px; }
+
+/* ---- Programas: botão "Ver mais" dentro de cada card + linhas divisórias ---- */
+.program-cards { align-items: start; }
+.program-item { display: flex; flex-direction: column; gap: 22px; }
+.program-item .program-card { flex: 1; }
+.program-item .btn { width: 100%; min-height: 72px; border-radius: 40px; font-size: 1.5rem; text-transform: uppercase; }
+body[data-page="programas"] #integrar,
+body[data-page="programas"] #aprendizagem { border-top: 4px solid var(--navy); }
+
+/* ---- FAQ: cards centralizados; resposta troca a pergunta dentro do card (como no Figma) ---- */
+.faq-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 26px; }
+.faq-card { flex: 0 0 calc((100% - 52px) / 3); transition: background .25s; }
+.faq-card__a { display: none; background: transparent; transition: none; grid-template-rows: none; }
+.faq-card.is-open { background: var(--yellow); }
+.faq-card.is-open .faq-card__q { display: none; }
+.faq-card.is-open .faq-card__a { display: flex; order: 1; flex: 1; align-items: center; justify-content: center; min-height: 132px; animation: faqIn .3s var(--ease); }
+.faq-card.is-open .faq-card__toggle { order: 2; border-top: 1px solid var(--navy); }
+.faq-card__a > div { overflow: visible; }
+.faq-card__a p { padding: 26px 22px; text-align: center; font-family: var(--font-serif); font-weight: 700; font-size: 1.05rem; line-height: 1.3; color: var(--navy); }
+@keyframes faqIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+/* ---- Alugue: carrossel foto a foto, alinhado à esquerda, próxima foto aparecendo ---- */
+.infra .photo-carousel__track { scroll-snap-type: x mandatory; gap: 20px; }
+.infra .photo-carousel__track img { scroll-snap-align: start; }
+.infra .photo-carousel__arrow { display: none; }
+
+/* ---- Para empresas: título menor e lista de benefícios mais larga ---- */
+.split--benefits { grid-template-columns: minmax(0, 440px) minmax(0, 1fr); gap: 56px; max-width: 1400px; }
+.split--benefits .split__title-lg { font-size: 2.25rem; line-height: 1.3; }
+.split--benefits .bullet-list { max-width: none; }
+
+@media (max-width: 980px) {
+  .program-item .btn { min-height: 60px; font-size: 1.25rem; }
+  .faq-card { flex-basis: calc((100% - 26px) / 2); }
+  .doc-card, .doc-card:last-child:nth-child(3n + 1), .doc-card:last-child:nth-child(odd) { flex-basis: calc(50% - 11px); }
+  .split--benefits { grid-template-columns: 1fr; gap: 26px; }
+}
+@media (max-width: 640px) {
+  .faq-card { flex-basis: 100%; }
+  .doc-card, .doc-card:last-child:nth-child(3n + 1), .doc-card:last-child:nth-child(odd) { flex-basis: 100%; }
+}
+.person-card__role { margin: 0; }
+.person-card__name { line-height: 1.2; }
+.person-card { gap: 12px; }
