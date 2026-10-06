@@ -1187,18 +1187,20 @@ body.nav-open .nav-toggle span::after { transform: translateX(-50%) rotate(-45de
 }
 .photo-carousel__arrow {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0; bottom: 0;
+  margin-block: auto;
   width: 42px; height: 42px;
   border-radius: 50%;
   border: none;
   background: rgba(1, 55, 115, 0.85);
   color: #fff;
-  font-size: 1.5rem;
   line-height: 1;
+  padding: 0;
   display: grid;
   place-items: center;
+  cursor: pointer;
 }
+.photo-carousel__arrow svg { display: block; }
 .photo-carousel__arrow:hover { background: var(--navy); }
 .photo-carousel__arrow--prev { left: 10px; }
 .photo-carousel__arrow--next { right: 10px; }
